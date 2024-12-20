@@ -40,10 +40,10 @@ for k = 1:length(audioFiles)
     end
 
     % Check if the audio duration is at least 3 seconds
-    if length(audioData) / fs < 3
-        disp(['Skipping ', audioFile, ': audio is too short (< 3 seconds).']);
-        continue;
-    end
+    %if length(audioData) / fs < 3
+    %    disp(['Skipping ', audioFile, ': audio is too short (< 3 seconds).']);
+    %    continue;
+    %end
 
     % Zero-pad the signal to the next power of 2
     N = 2^nextpow2(length(audioData));
@@ -126,7 +126,7 @@ function X = my_fft_iterative(x)
         end
     end
 end
-
+    
 % Function to map frequency to note
 function note = frequencyToNote(frequency)
     % Define the standard pitch A4 = 440 Hz
